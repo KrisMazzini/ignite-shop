@@ -5,6 +5,7 @@ import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
 
 import { stripe } from '@/lib/stripe'
+import { priceFormatter } from '@/utils/formatter'
 
 import { HomeContainer, Product } from '@/styles/pages/home'
 
@@ -41,7 +42,7 @@ export default function Home({ products }: HomeProps) {
 
             <footer>
               <strong>{product.name}</strong>
-              <span>{product.price}</span>
+              <span>{priceFormatter.format(product.price)}</span>
             </footer>
           </Product>
         )
